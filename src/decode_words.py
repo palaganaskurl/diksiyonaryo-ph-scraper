@@ -18,4 +18,4 @@ if __name__ == '__main__':
             new_words[unidecode.unidecode(word)] = details
 
         with open('../words/tagalog-words-decoded.json', 'w+', encoding='utf-8') as g:
-            json.dump(new_words, g, indent=4, ensure_ascii=False)
+            json.dump(new_words, g, ensure_ascii=False)
