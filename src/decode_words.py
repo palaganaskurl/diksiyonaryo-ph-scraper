@@ -9,6 +9,12 @@ if __name__ == '__main__':
         new_words = {}
 
         for word, details in words.items():
+            new_definitions = []
+
+            for definition in details['definitions'][:]:
+                new_definitions.append(unidecode.unidecode(definition))
+
+            details['definitions'] = new_definitions
             new_words[unidecode.unidecode(word)] = details
 
         with open('../words/tagalog-words-decoded.json', 'w+', encoding='utf-8') as g:
